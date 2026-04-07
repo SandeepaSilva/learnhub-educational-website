@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Educational Platform</title>
+    
+    <!-- Link to Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to our custom CSS styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Link to FontAwesome for simple icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==============================================
+         1. NAVIGATION BAR
+         ============================================== -->
+    <nav id="navbar" class="navbar">
+        <div class="container nav-container">
+            
+            <!-- Logo Section -->
+            <a href="#" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> LearnHub
+            </a>
+            
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+            
+            <!-- Login Button -->
+            <a href="#" class="btn login-btn">Log In</a>
+            
+            <!-- Hamburger Menu Icon (For Mobile Phones) -->
+            <div class="hamburger" id="hamburger">
+                <!-- FontAwesome bars icon -->
+                <i class="fa-solid fa-bars"></i> 
+            </div>
+            
+        </div>
+    </nav>
+
+    <!-- ==============================================
+         2. HERO SECTION
+         ============================================== -->
+    <!-- The "fade-in" class is used by JS to animate this section -->
+    <header id="home" class="hero fade-in">
+        <div class="container hero-content">
+            
+            <!-- Left Side: Text and Buttons -->
+            <div class="hero-text">
+                <h1>Unlock Your Potential with Premium Courses</h1>
+                <p>Learn from industry experts and take your career to the next level. Access thousands of high-quality courses designed for students of all levels.</p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn primary-btn">Browse Courses</a>
+                    <a href="#categories" class="btn secondary-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Right Side: Graphic or Image -->
+            <div class="hero-image">
+                <!-- A simple box replacing a complex image -->
+                <div class="image-wrapper">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- ==============================================
+         3. CATEGORIES SECTION
+         ============================================== -->
+    <section id="categories" class="categories section-padding">
+        <div class="container fade-in">
+            
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>Top Categories</h2>
+                <p>Explore our most popular learning paths</p>
+            </div>
+            
+            <!-- CSS Grid used to place cards side by side -->
+            <div class="grid categories-grid">
+                
+                <!-- Category Box 1 -->
+                <div class="category-card">
+                    <div class="category-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>120+ Courses</p>
+                </div>
+                
+                <!-- Category Box 2 -->
+                <div class="category-card">
+                    <div class="category-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Data Science</h3>
+                    <p>85+ Courses</p>
+                </div>
+                
+                <!-- Category Box 3 -->
+                <div class="category-card">
+                    <div class="category-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>60+ Courses</p>
+                </div>
+                
+                <!-- Category Box 4 -->
+                <div class="category-card">
+                    <div class="category-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>Marketing</h3>
+                    <p>90+ Courses</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         4. FEATURED COURSES SECTION
+         ============================================== -->
+    <section id="courses" class="courses section-padding bg-light">
+        <div class="container fade-in">
+            
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>Featured Courses</h2>
+                <p>Start learning something new today</p>
+            </div>
+            
+            <!-- CSS Grid to hold course cards -->
+            <div class="grid courses-grid">
+                
+                <!-- Course Box 1 -->
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Development Course" class="course-img">
+                    <div class="course-content">
+                        <span class="tag">Web Dev</span>
+                        <h3>The Complete Front-End Bootcamp</h3>
+                        <p class="instructor">By Jane Doe</p>
+                        
+                        <!-- Course Price and Rating -->
+                        <div class="course-footer">
+                            <span class="rating"><i class="fa-solid fa-star"></i> 4.9 (1.2k)</span>
+                            <span class="price">$49.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course Box 2 -->
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="UI/UX Design Course" class="course-img">
+                    <div class="course-content">
+                        <span class="tag">Design</span>
+                        <h3>Master Figma for UI/UX Design</h3>
+                        <p class="instructor">By John Smith</p>
+                        
+                        <!-- Course Price and Rating -->
+                        <div class="course-footer">
+                            <span class="rating"><i class="fa-solid fa-star"></i> 4.8 (850)</span>
+                            <span class="price">$39.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course Box 3 -->
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Data Science Course" class="course-img">
+                    <div class="course-content">
+                        <span class="tag">Data</span>
+                        <h3>Python for Machine Learning</h3>
+                        <p class="instructor">By Dr. Alan Turing</p>
+                        
+                        <!-- Course Price and Rating -->
+                        <div class="course-footer">
+                            <span class="rating"><i class="fa-solid fa-star"></i> 4.7 (2.1k)</span>
+                            <span class="price">$59.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         5. TESTIMONIALS SECTION
+         ============================================== -->
+    <section id="testimonials" class="testimonials section-padding">
+        <div class="container fade-in">
+            
+            <div class="section-title">
+                <h2>Student Testimonials</h2>
+                <p>Hear what our learners have to say</p>
+            </div>
+            
+            <div class="grid testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p class="quote">"LearnHub completely changed my career path. The Web Development bootcamp was easy to follow and incredibly practical."</p>
+                    <div class="student-info">
+                        <strong>Sarah Jenkins</strong>
+                        <span>Front-End Developer</span>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p class="quote">"I loved the Data Science courses. The instructors explain complicated concepts in a very beginner-friendly way."</p>
+                    <div class="student-info">
+                        <strong>Mike Chen</strong>
+                        <span>Data Analyst</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ==============================================
+         6. NEWSLETTER SECTION
+         ============================================== -->
+    <section id="newsletter" class="newsletter section-padding bg-light">
+        <div class="container newsletter-container fade-in">
+            
+            <div class="newsletter-content">
+                <h2>Join Our Newsletter</h2>
+                <p>Get the latest updates on new courses, special discounts, and learning resources.</p>
+                
+                <!-- Simple newsletter form (does not actually send email) -->
+                <form class="newsletter-form" action="#" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn primary-btn">Subscribe</button>
+                </form>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ==============================================
+         7. CALL TO ACTION SECTION (Banner)
+         ============================================== -->
+    <section class="cta section-padding fade-in">
+        <div class="container cta-container">
+            <h2>Ready to start your journey?</h2>
+            <p>Join thousands of students learning today.</p>
+            <a href="#courses" class="btn cta-btn btn-lg">Sign Up For Free</a>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         8. FOOTER SECTION
+         ============================================== -->
+    <footer>
+        <div class="container footer-content fade-in">
+            
+            <div class="footer-col">
+                <h3>LearnHub</h3>
+                <p>Empowering the world to learn through accessible high-quality education.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>info@learnhub.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 LearnHub. Educational Portfolio Project.</p>
+        </div>
+    </footer>
+
+    <!-- Link to JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

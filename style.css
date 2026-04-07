@@ -1,0 +1,458 @@
+/* =========================================================================
+   1. CSS VARIABLES
+   These store colors and values we use repeatedly. 
+   When we change it here, it changes everywhere on the website!
+   ========================================================================= */
+:root {
+    /* Colors */
+    --primary-color: #4f46e5;      /* Indigo blue */
+    --primary-hover: #4338ca;      /* Darker indigo for hovering */
+    --text-dark: #1f2937;          /* Dark gray for text */
+    --text-muted: #6b7280;         /* Light gray for paragraphs */
+    --bg-white: #ffffff;           /* White background */
+    --bg-light: #f9fafb;           /* Off-white background */
+    --border-color: #e5e7eb;       /* Very light gray for borders */
+    
+    /* Animation speed */
+    --transition-speed: 0.3s;
+}
+
+/* =========================================================================
+   2. GLOBAL SETTINGS
+   Applies to every element on the webpage
+   ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes sure padding doesn't affect width */
+}
+
+/* Smooth scrolling when clicking a link that jumps to a section */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Gives space for the fixed navbar so it doesn't overlap titles */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6; /* Adds breathing room between lines of text */
+}
+
+/* Remove underlines from links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove bullet points from lists */
+ul {
+    list-style: none;
+}
+
+/* =========================================================================
+   3. REUSABLE UTILITIES
+   Classes we can reuse on different HTML elements
+   ========================================================================= */
+/* Container keeps content centered and not too wide */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Adds consistent space at the top and bottom of sections */
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Gray background utility */
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* Simple CSS Grid template */
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+/* Center text */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: var(--text-muted);
+}
+
+/* =========================================================================
+   4. BUTTONS
+   Styles for all clickable buttons
+   ========================================================================= */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 8px; /* Rounded corners */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    border: 2px solid transparent;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* When the mouse hovers over the button */
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px); /* Moves it slightly up */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds shadow */
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.cta-btn {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* =========================================================================
+   5. NAVIGATION BAR
+   ========================================================================= */
+.navbar {
+    position: fixed; /* Sticks to the top of the screen */
+    top: 0;
+    width: 100%;
+    background-color: var(--bg-white);
+    z-index: 1000; /* Stays on top of other elements */
+    height: 80px;
+    transition: all var(--transition-speed) ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Shadow effect applied by JavaScript when user scrolls down */
+.navbar.scrolled {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-bottom: none;
+}
+
+.nav-container {
+    display: flex; /* Aligns logo and links horizontally */
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* The actual menu links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hamburger icon is hidden on Desktop */
+.hamburger {
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* =========================================================================
+   6. HERO SECTION (HOME)
+   The big welcome section at the top of the page
+   ========================================================================= */
+.hero {
+    padding-top: 140px; 
+    padding-bottom: 100px;
+    background: linear-gradient(135deg, #f0fdfa, #e0e7ff); /* Light gradient colors */
+}
+
+.hero-content {
+    display: flex; /* Puts text on left, image on right */
+    align-items: center;
+    gap: 60px;
+}
+
+/* Text area styling */
+.hero-text {
+    flex: 1; /* Takes up 50% of the space */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Image area styling */
+.hero-image {
+    flex: 1; /* Takes up the other 50% of the space */
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    width: 100%;
+    max-width: 450px;
+    height: 350px;
+    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #818cf8, #4f46e5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 8rem;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+/* =========================================================================
+   7. CATEGORIES & COURSES SECTIONS
+   ========================================================================= */
+/* CSS Grid makes the cards automatically adjust to screen size */
+.categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.courses-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Reusable card style */
+.category-card, .course-card {
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed) ease;
+    overflow: hidden; /* Hides image edges if they go out of bounds */
+}
+
+/* Floating animation when hovering over cards */
+.category-card:hover, .course-card:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px); /* Moves card up slightly */
+    border-color: var(--primary-color);
+}
+
+.category-card {
+    padding: 30px;
+    text-align: center;
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Course Card specific styles */
+.course-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover; /* Prevents the image from stretching weirdly */
+    display: block;    /* Keeps layout clean */
+}
+
+.course-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tag {
+    background-color: rgba(79, 70, 229, 0.1);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.course-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.price {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* =========================================================================
+   8. TESTIMONIALS & NEWSLETTER SECTIONS
+   ========================================================================= */
+.testimonials-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.testimonial-card {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.quote {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Newsletter Styles */
+.newsletter-container {
+    text-align: center;
+    max-width: 600px; /* Keeps the form from getting too wide */
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    flex: 1; /* Takes up remaining space next to button */
+    padding: 12px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+/* =========================================================================
+   9. CALL TO ACTION & FOOTER
+   ========================================================================= */
+.cta {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 1100px;
+}
+
+footer {
+    background-color: var(--text-dark);
+    color: white;
+    padding: 60px 0 20px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col ul li a {
+    color: #9ca3af; /* Light gray */
+}
+
+.footer-col ul li a:hover {
+    color: white;
+}
+
+/* =========================================================================
+   10. JAVASCRIPT ANIMATIONS
+   These classes are used by JavaScript to create the fade-in effect
+   ========================================================================= */
+.fade-in {
+    opacity: 0; /* Invisible at start */
+    transform: translateY(40px); /* Pushed down at start */
+    transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+
+/* JavaScript adds this class when the element is scrolled into view */
+.fade-in.appear {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Moved back to original spot */
+}
+
+/* =========================================================================
+   11. MOBILE RESPONSIVE DESIGN
+   Rules that apply ONLY on smaller screens (Mobile Phones/Tablets)
+   ========================================================================= */
+
+/* Adjusting layout for tablets and smaller */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center;     /* Center align text */
+    }
+}
+
+/* Adjusting layout for mobile phones */
+@media (max-width: 768px) {
+    /* Hide the normal links, show hamburger menu */
+    .hamburger {
+        display: block;
+    }
+    
+    .login-btn {
+        display: none; /* Hide login button for simplicity on mobile */
+    }
+
+    /* Mobile Dropdown Menu */
+    .nav-links {
+        position: absolute;
+        top: 80px; /* Place exactly below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        flex-direction: column;
+        
+        /* The menu is hidden by default using overflow and max-height */
+        overflow: hidden;
+        max-height: 0; 
+        transition: max-height 0.4s ease; 
+    }
+
+    /* When JavaScript adds the 'active' class, this reveals the menu */
+    .nav-links.active {
+        max-height: 400px; /* Allows the menu to slide open */
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .newsletter-form {
+        flex-direction: column; /* Stack input and button */
+    }
+}
